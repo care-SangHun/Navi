@@ -1,13 +1,11 @@
 package kr.care_pet.service.app.navi.activity
 
-import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.MediaStore
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import kr.care_pet.service.app.navi.R
 import kr.care_pet.service.app.navi.databinding.ActivitySignUpBinding
 

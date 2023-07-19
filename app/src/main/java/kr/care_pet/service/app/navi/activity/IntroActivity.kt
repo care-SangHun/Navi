@@ -1,14 +1,11 @@
 package kr.care_pet.service.app.navi.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.view.View
 import android.view.animation.Animation
 import android.view.animation.TranslateAnimation
-import android.widget.Toast
-import kr.care_pet.service.app.navi.MainActivity
+import androidx.appcompat.app.AppCompatActivity
 import kr.care_pet.service.app.navi.R
 import kr.care_pet.service.app.navi.databinding.ActivityIntroBinding
 
