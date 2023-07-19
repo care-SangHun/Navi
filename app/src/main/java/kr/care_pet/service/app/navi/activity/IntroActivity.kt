@@ -15,7 +15,7 @@ import kr.care_pet.service.app.navi.databinding.ActivityIntroBinding
 class IntroActivity : AppCompatActivity() {
 
     private val splashDelay: Long = 3000
-    val binding by lazy { ActivityIntroBinding.inflate(layoutInflater) }
+    private val binding by lazy { ActivityIntroBinding.inflate(layoutInflater) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
