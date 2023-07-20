@@ -1,4 +1,4 @@
-package kr.care_pet.service.app.navi.activity
+package kr.carepet.service.app.navi.activity
 
 import android.app.DatePickerDialog
 import android.net.Uri
@@ -8,8 +8,8 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import kr.care_pet.service.app.navi.R
-import kr.care_pet.service.app.navi.databinding.ActivitySignUpBinding
+import kr.carepet.service.app.navi.R
+import kr.carepet.service.app.navi.databinding.ActivitySignUpBinding
 import java.util.Calendar
 import java.util.Locale
 

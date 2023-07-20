@@ -1,10 +1,10 @@
-package kr.care_pet.service.app.navi.activity
+package kr.carepet.service.app.navi.activity
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import kr.care_pet.service.app.navi.R
+import kr.carepet.service.app.navi.R
 
 class LoginActivity : AppCompatActivity() {
 
