@@ -1,4 +1,4 @@
-package kr.care_pet.service.app.navi.activity
+package kr.carepet.service.app.navi.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,8 +6,8 @@ import android.os.CountDownTimer
 import android.view.animation.Animation
 import android.view.animation.TranslateAnimation
 import androidx.appcompat.app.AppCompatActivity
-import kr.care_pet.service.app.navi.R
-import kr.care_pet.service.app.navi.databinding.ActivityIntroBinding
+import kr.carepet.service.app.navi.R
+import kr.carepet.service.app.navi.databinding.ActivityIntroBinding
 
 class IntroActivity : AppCompatActivity() {
 

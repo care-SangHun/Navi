@@ -1,4 +1,4 @@
-package kr.care_pet.service.app.navi
+package kr.carepet.service.app.navi
 
 import org.junit.Test
 

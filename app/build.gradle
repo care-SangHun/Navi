@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'kr.care_pet.service.app.navi'
+    namespace 'kr.carepet.service.app.navi'
     compileSdk 33
 
     defaultConfig {
-        applicationId "kr.care_pet.service.app.navi"
+        applicationId "kr.carepet.service.app.navi"
         minSdk 24
         targetSdk 33
         versionCode 1
