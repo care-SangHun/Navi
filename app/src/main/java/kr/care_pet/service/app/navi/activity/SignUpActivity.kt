@@ -47,7 +47,7 @@ class SignUpActivity : AppCompatActivity() {
     private fun cateClick() {
         val alertDialog = AlertDialog.Builder(this)
             .setTitle("Alert")
-            .setMessage("You clicked the text!")
+            .setMessage("견종클릭")
             .setPositiveButton("OK") { dialog, which ->
                 // OK 버튼 클릭 시 처리할 로직을 작성합니다.
             }
