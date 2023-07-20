@@ -1,7 +1,8 @@
-package kr.carepet.service.app.navi
+package kr.carepet.service.app.navi.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import kr.carepet.service.app.navi.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

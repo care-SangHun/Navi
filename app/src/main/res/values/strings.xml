@@ -9,4 +9,10 @@
     <string name="signup_gender_female">여아</string>
     <string name="signup_address">주소</string>
     <string name="signup_chip_num">칩번호</string>
+
+    <string name="login_title">Care Pet</string>
+    <string name="login_sub_title">마켓 둘러보기 ></string>
+    <string name="login_esay_login">간편하게 로그인하기</string>
+    <string name="login_signup">회원가입</string>
+    <string name="login_email">이메일로 로그인</string>
 </resources>

@@ -4,7 +4,6 @@ import android.app.DatePickerDialog
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -85,11 +84,10 @@ class SignUpActivity : AppCompatActivity() {
         val year = calendar.get(Calendar.YEAR)
         val month = calendar.get(Calendar.MONTH)
         val day = calendar.get(Calendar.DAY_OF_MONTH)
-        Toast.makeText(this, "${year} ${month+1} ${day}", Toast.LENGTH_SHORT).show()
 
         val datePickerDialog = DatePickerDialog(this,
-            DatePickerDialog.OnDateSetListener { view, selectedYear, selectedMonth, selectedDayOfMonth ->
-                val selectedDate = String.format(
+            { view, selectedYear, selectedMonth, selectedDayOfMonth ->
+                String.format(
                     //핸드폰이 한국어 설정되어있어야 locale이 동작함
                     Locale("ko", "KR"), "%d년 %02d월 %02d일",
                     selectedYear, selectedMonth + 1, selectedDayOfMonth)
