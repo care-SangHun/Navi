@@ -15,4 +15,8 @@
     <string name="login_esay_login">간편하게 로그인하기</string>
     <string name="login_signup">회원가입</string>
     <string name="login_email">이메일로 로그인</string>
+
+    <!-- 네이버 client   -->
+    <string name="naver_client">J_pbuqdm8q9u37YZOMFI</string>
+    <string name="naver_secret_client">gOYGlN__Wh</string>
 </resources>

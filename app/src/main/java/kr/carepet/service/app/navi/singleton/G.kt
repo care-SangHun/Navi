@@ -1,4 +1,4 @@
-package kr.carepet.service.app.navi
+package kr.carepet.service.app.navi.singleton
 
 object G {
     var userId:String = ""
