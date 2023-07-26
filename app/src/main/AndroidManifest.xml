@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".KakaoApplication"
@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Navi"
         tools:targetApi="31">
+        <activity
+            android:name=".activity.TimerActivity"
+            android:exported="false" />
         <activity
             android:name=".activity.SignUpActivity"
             android:exported="false" />
@@ -33,18 +36,20 @@
         <activity
             android:name=".activity.MainActivity"
             android:exported="true" />
-
-        <activity android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
+        <activity
+            android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:host="oauth"
+
+                <data
+                    android:host="oauth"
                     android:scheme="kakao64420f8a9770f177aa4f87153c4f6f5c" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

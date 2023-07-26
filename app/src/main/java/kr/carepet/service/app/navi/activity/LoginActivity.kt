@@ -44,6 +44,8 @@ class LoginActivity : AppCompatActivity() {
 
         binding.loginBtnGoogle.setOnClickListener { googleClick() }
 
+        binding.loginTvGo.setOnClickListener { startActivity(Intent(this,TimerActivity::class.java)) }
+
     }
 
     private fun kakaoClick() {

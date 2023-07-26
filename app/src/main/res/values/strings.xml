@@ -19,4 +19,9 @@
     <!-- 네이버 client   -->
     <string name="naver_client">J_pbuqdm8q9u37YZOMFI</string>
     <string name="naver_secret_client">gOYGlN__Wh</string>
+
+
+    <string name="timer_pause">Pause</string>
+    <string name="timer_start">Start</string>
+    <string name="timer_stop">Stop</string>
 </resources>
