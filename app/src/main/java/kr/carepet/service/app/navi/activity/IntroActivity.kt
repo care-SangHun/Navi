@@ -1,8 +1,23 @@
+/*
+ *  * Copyright(c) 2023 CarePat All right reserved.
+ *  * This software is the proprietary information of CarePet.
+ *  *
+ *  * Revision History
+ *  * Author                         Date             Description
+ *  * --------------------------    -------------    ----------------------------------------
+ *  * sanghun.lee@care-biz.co.kr     2023. 7. 28.    CarePet Development...
+ *  *
+ */
+
 package kr.carepet.service.app.navi.activity
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.util.Log
 import android.view.animation.Animation
 import android.view.animation.TranslateAnimation
 import androidx.appcompat.app.AppCompatActivity
@@ -17,8 +32,6 @@ class IntroActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
-
 
         startTextviewAnimaiton()
 

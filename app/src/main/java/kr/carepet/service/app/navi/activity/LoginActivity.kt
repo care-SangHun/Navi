@@ -46,6 +46,8 @@ class LoginActivity : AppCompatActivity() {
 
         binding.loginTvGo.setOnClickListener { startActivity(Intent(this,TimerActivity::class.java)) }
 
+        binding.loginLayoutEmail.setOnClickListener { startActivity(Intent(this, MainActivity::class.java)) }
+
     }
 
     private fun kakaoClick() {
