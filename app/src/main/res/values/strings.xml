@@ -30,6 +30,9 @@
     <string name="msg_subscribed">Subscribed to weather topic</string>
     <string name="msg_token_fmt" translatable="false">FCM registration Token: %s</string>
 
+    <!-- Mapbox Public Token (Secret Token은 gradle.properties)-->
+    <string name="mapbox_access_token">pk.eyJ1IjoiZGFsYW5kcm9pZCIsImEiOiJjbGs3d3pkNXMwODdnM2VxbmNjOXM2MnJpIn0.Re3CGOsIzCAdMmuLFwVolw</string>
+
 
     <string name="timer_pause">Pause</string>
     <string name="timer_start">Start</string>

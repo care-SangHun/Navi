@@ -15,6 +15,7 @@ import androidx.work.WorkManager
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 import kr.carepet.service.app.navi.R
+import kr.carepet.service.app.navi.singleton.MySharedPreference
 
 
 class MyFirebaseMessagingService : FirebaseMessagingService() {
@@ -57,6 +58,8 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
         // If you want to send messages to this application instance or
         // manage this apps subscriptions on the server side, send the
         // FCM registration token to your app server.
+        MySharedPreference.setFcmToken(token)
+
         sendRegistrationToServer(token)
     }
 

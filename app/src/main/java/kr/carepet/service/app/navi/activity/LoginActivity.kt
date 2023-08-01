@@ -20,9 +20,8 @@ import com.navercorp.nid.oauth.NidOAuthLogin
 import com.navercorp.nid.oauth.OAuthLoginCallback
 import com.navercorp.nid.profile.NidProfileCallback
 import com.navercorp.nid.profile.data.NidProfileResponse
-import kr.carepet.service.app.navi.R
-import kr.carepet.service.app.navi.singleton.G
 import kr.carepet.service.app.navi.databinding.ActivityLoginBinding
+import kr.carepet.service.app.navi.singleton.G
 
 class LoginActivity : AppCompatActivity() {
 

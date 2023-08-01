@@ -2,9 +2,7 @@ package kr.carepet.service.app.navi.activity
 
 
 import android.Manifest
-import android.app.Notification
-import android.app.NotificationChannel
-import android.app.NotificationManager
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
@@ -15,9 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.messaging.FirebaseMessaging
-import kr.carepet.service.app.navi.R
 import kr.carepet.service.app.navi.databinding.ActivityMainBinding
-import kr.carepet.service.app.navi.singleton.G
 import kr.carepet.service.app.navi.singleton.MySharedPreference
 
 
@@ -44,52 +40,64 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding.mainTvId.text = G.userId
-        binding.mainTvEmail.text = G.userEmail
-
-
         weatherCheck()
 
-        binding.subscribeButton.setOnClickListener {
-            Log.d(TAG, "Subscribing to weather topic")
-            // [START subscribe_topics]
-            FirebaseMessaging.getInstance().subscribeToTopic("weather")
-                .addOnCompleteListener { task ->
-                    var msg = getString(kr.carepet.service.app.navi.R.string.msg_subscribed)
-                    if (!task.isSuccessful) {
-                        msg = getString(kr.carepet.service.app.navi.R.string.msg_subscribe_failed)
-                    }
-                    Log.d(TAG, msg!!)
-                    Toast.makeText(this@MainActivity, msg, Toast.LENGTH_SHORT).show()
-                }
-            // [END subscribe_topics]
+        binding.subscribeButton.setOnClickListener { subscribe() }
+
+        binding.logTokenButton.setOnClickListener { getToken() }
+
+        binding.mainBtnPhone.setOnClickListener {
+
+            val model = Build.MODEL // 기기 모델명 (e.g., "Galaxy S20")
+
+            //모델명 찍기
+
+            Toast.makeText(this, "모델명: ${model}", Toast.LENGTH_SHORT).show()
+
         }
 
-        binding.logTokenButton.setOnClickListener {
-            // Get token
-            // [START log_reg_token]
-            FirebaseMessaging.getInstance().token
-                .addOnCompleteListener(OnCompleteListener<String?> { task ->
-                    if (!task.isSuccessful) {
-                        Log.w(
-                            TAG,
-                            "Fetching FCM registration token failed",
-                            task.exception
-                        )
-                        return@OnCompleteListener
-                    }
-
-                    // Get new FCM registration token
-                    val token = task.result
-
-                    // Log and toast
-                    val msg = getString(kr.carepet.service.app.navi.R.string.msg_token_fmt, token)
-                    Log.d(TAG, msg)
-                    Toast.makeText(this@MainActivity, msg, Toast.LENGTH_SHORT).show()
-                })
-        }
+        binding.mainBtnToReg.setOnClickListener { startActivity(Intent(this, RegistActivity::class.java)) }
 
         askNotificationPermission()
+    }
+
+    private fun getToken(){
+        // Get token
+        // [START log_reg_token]
+        FirebaseMessaging.getInstance().token
+            .addOnCompleteListener(OnCompleteListener<String?> { task ->
+                if (!task.isSuccessful) {
+                    Log.w(
+                        TAG,
+                        "Fetching FCM registration token failed",
+                        task.exception
+                    )
+                    return@OnCompleteListener
+                }
+
+                // Get new FCM registration token
+                val token = task.result
+
+                // Log and toast
+                val msg = getString(kr.carepet.service.app.navi.R.string.msg_token_fmt, token)
+                Log.d(TAG, msg)
+                Toast.makeText(this@MainActivity, msg, Toast.LENGTH_SHORT).show()
+            })
+    }
+
+    private fun subscribe(){
+        Log.d(TAG, "Subscribing to weather topic")
+        // [START subscribe_topics]
+        FirebaseMessaging.getInstance().subscribeToTopic("weather")
+            .addOnCompleteListener { task ->
+                var msg = getString(kr.carepet.service.app.navi.R.string.msg_subscribed)
+                if (!task.isSuccessful) {
+                    msg = getString(kr.carepet.service.app.navi.R.string.msg_subscribe_failed)
+                }
+                Log.d(TAG, msg!!)
+                Toast.makeText(this@MainActivity, msg, Toast.LENGTH_SHORT).show()
+            }
+        // [END subscribe_topics]
     }
 
     private fun weatherCheck() {
