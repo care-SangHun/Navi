@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
         weatherCheck()
 
-        binding.subscribeButton.setOnClickListener { subscribe() }
+        binding.mainBtnToBoard.setOnClickListener { startActivity(Intent(this, BoardActivity::class.java)) }
 
         binding.logTokenButton.setOnClickListener { getToken() }
 
@@ -83,21 +83,6 @@ class MainActivity : AppCompatActivity() {
                 Log.d(TAG, msg)
                 Toast.makeText(this@MainActivity, msg, Toast.LENGTH_SHORT).show()
             })
-    }
-
-    private fun subscribe(){
-        Log.d(TAG, "Subscribing to weather topic")
-        // [START subscribe_topics]
-        FirebaseMessaging.getInstance().subscribeToTopic("weather")
-            .addOnCompleteListener { task ->
-                var msg = getString(kr.carepet.service.app.navi.R.string.msg_subscribed)
-                if (!task.isSuccessful) {
-                    msg = getString(kr.carepet.service.app.navi.R.string.msg_subscribe_failed)
-                }
-                Log.d(TAG, msg)
-                Toast.makeText(this@MainActivity, msg, Toast.LENGTH_SHORT).show()
-            }
-        // [END subscribe_topics]
     }
 
     private fun weatherCheck() {

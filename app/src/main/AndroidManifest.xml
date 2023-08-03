@@ -15,11 +15,13 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/Theme.Navi"
-        android:screenOrientation="portrait"
         tools:targetApi="31">
-
+        <activity
+            android:name=".activity.BoardActivity"
+            android:exported="false" />
         <activity
             android:name=".activity.RegistActivity"
             android:exported="false" />
