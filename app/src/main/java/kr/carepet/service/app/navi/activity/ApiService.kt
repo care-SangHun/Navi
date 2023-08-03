@@ -20,4 +20,7 @@ import retrofit2.http.POST
 interface ApiService {
     @POST("api/v1/member/create-user")
     fun sendUserToServer(@Body data:UserDataModel):Call<UserDataResponse>
+
+    //@POST("api/v1/mypet/create-pet")
+    //fun sendMyPetToServer(@Body data:)
 }

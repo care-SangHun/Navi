@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace 'kr.carepet.service.app.navi'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "kr.carepet.service.app.navi"
         minSdk 26
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 

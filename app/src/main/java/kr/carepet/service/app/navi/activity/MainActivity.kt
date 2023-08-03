@@ -94,7 +94,7 @@ class MainActivity : AppCompatActivity() {
                 if (!task.isSuccessful) {
                     msg = getString(kr.carepet.service.app.navi.R.string.msg_subscribe_failed)
                 }
-                Log.d(TAG, msg!!)
+                Log.d(TAG, msg)
                 Toast.makeText(this@MainActivity, msg, Toast.LENGTH_SHORT).show()
             }
         // [END subscribe_topics]

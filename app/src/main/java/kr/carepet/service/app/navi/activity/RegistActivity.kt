@@ -14,11 +14,13 @@ package kr.carepet.service.app.navi.activity
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.util.Patterns
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kr.carepet.service.app.navi.databinding.ActivityRegistBinding
 import kr.carepet.service.app.navi.model.UserDataModel
 import kr.carepet.service.app.navi.model.UserDataResponse
+import kr.carepet.service.app.navi.singleton.MySharedPreference
 import kr.carepet.service.app.navi.singleton.RetrofitClientServer
 import retrofit2.Call
 import retrofit2.Callback
@@ -32,6 +34,8 @@ class RegistActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        binding.regTvToken.text = MySharedPreference.getFcmToken()
+
         binding.regBtnSend.setOnClickListener { sendUserToServer() }
 
     }
@@ -39,20 +43,19 @@ class RegistActivity : AppCompatActivity() {
     private fun sendUserToServer() {
         val apiService = RetrofitClientServer.instance
 
-        var appKey = ""
-        var appOs = "001"
-        var appTypNm = Build.MODEL.toString()
-        var snsLogin = ""
-        var userID = binding.regEtUserid.text.toString()
-        var userName = binding.regEtUsername.text.toString()
-        var userPW = binding.regEtUserpw.text.toString()
+        val appKey = MySharedPreference.getFcmToken()
+        val appOs = "001"
+        val appTypNm = Build.MODEL.toString()
+        val snsLogin = ""
+        val userID = binding.regEtUserid.text.toString()
+        val userName = binding.regEtUsername.text.toString()
+        val userPW = binding.regEtUserpw.text.toString()
 
-        val isValidEmail = isEmailValid(binding.regEtUserid.toString())
 
         if (userID.isNotEmpty() && userName.isNotEmpty() && userPW.isNotEmpty()){
 
             //이메일 형식이 아니라면 메소드를 종료
-            if(!isValidEmail) {
+            if(!Patterns.EMAIL_ADDRESS.matcher(userID).matches()) {
                 Toast.makeText(this, "올바른 이메일 형식이 아닙니다.", Toast.LENGTH_SHORT).show()
                 binding.regEtUserid.requestFocus()
                 return
@@ -99,8 +102,4 @@ class RegistActivity : AppCompatActivity() {
 
     }
 
-    fun isEmailValid(email: String): Boolean {
-        val regexPattern = Regex("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}")
-        return regexPattern.matches(email)
-    }
 }
